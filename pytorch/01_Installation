@@ -1,0 +1,33 @@
+Installation
+
+https://pytorch.org/get-started/locally/
+
+select OS: <your os>
+select Package: conda
+select Python 3.6+ version
+
+if Linux or Windows and want GPU support --> select Cuda version 11.* +
+
+Install Cuda Toolkit
+Development environment for creating high performance GPU-accelerated applications
+You need an NVIDIA GPU in your machine:
+
+https://developer.nvidia.com/cuda-downloads
+
+Download and install
+
+# Create conda environment and activate it 
+    conda create -n pytorch python=3.8
+    conda activate pytorch
+
+# Install pytorch
+    conda install pytorch torchvision -c pytorch
+or with GPU
+    conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+
+# Verification:
+    import torch
+    x = torch.rand(2, 2)
+    print(x)
+
+    torch.cuda.is_available()
